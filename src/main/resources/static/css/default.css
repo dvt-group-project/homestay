@@ -1,0 +1,187 @@
+/*=== MIXINS ===*/
+/*=== VARIABLES ===*/
+/*=== MEDIA QUERY ===*/
+/*=== Blue ===*/
+.primary-btn,
+.navbar-default .navbar-toggle, .navbar-toggle:hover, .navbar-toggle:focus,
+.navbar-collapse ul.navbar-nav li.book-online a.btn,
+.corner-ribbon span,
+.ed-blog-post .ed-post-date,
+.ed-booking-tab .nav-tabs li.active a span.ed-step-fill,
+.ed-booking-tab .nav-tabs li.active a:hover span.ed-step-fill,
+.ed-booking-tab .nav-tabs li.active a:focus span.ed-step-fill,
+.ed-room-select span.ed-room-select-fill,
+.price-table-light .price-title {
+  background-color: #00b6f4; }
+
+.primary-btn:hover, .primary-btn:focus,
+.navbar-collapse ul.navbar-nav li.book-online a.btn:hover,
+.navbar-collapse ul.navbar-nav li.book-online a.btn:focus {
+  background-color: #33c4f6; }
+
+.bordered-btn,
+.navbar-default .navbar-toggle, .navbar-toggle:hover, .navbar-toggle:focus,
+.ed-form .form-group .form-control:focus,
+.pagination > li > a,
+.pagination > li > span,
+.comment-form .form-control:focus,
+.cooming-page .ed-form .form-group .form-control:focus,
+.cooming-page.cooming-dark-page .ed-form .form-group .form-control:focus {
+  border: 1px solid #00b6f4; }
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+  color: #00b6f4;
+  border-color: #00b6f4; }
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: #00b6f4;
+  border-color: #00b6f4; }
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover,
+.controls ul li.active {
+  border-bottom: 2px solid #00b6f4; }
+
+.ed-booking-tab .nav-tabs li.ed-done a span.ed-step {
+  border: 2px solid #00b6f4; }
+
+.bordered-btn:hover, .bordered-btn:focus,
+.topbar ul li a:hover,
+li.language.dropdown ul.dropdown-menu li.active a,
+li.language.dropdown.open > a,
+.navbar-collapse ul.navbar-nav ul li a:hover,
+.navbar-collapse ul.navbar-nav ul li a:focus,
+.ed-tab .tab-content ul li span,
+.check-in .cs-select .cs-selected > span::after,
+.check-in .cs-select ul li:hover, .cs-select li.cs-selected,
+.Post-right h4 a:hover,
+.single-description ul li p.single-icon span,
+ul.ed-reservation-detail li:first-child span:last-child,
+.error-content a,
+.event-text .ed-post-meta span span,
+.event-text a span {
+  color: #00b6f4; }
+
+.corner-ribbon span::before {
+  border-left: 3px solid #23658f;
+  border-top: 3px solid #23658f; }
+
+.corner-ribbon span::after {
+  border-right: 3px solid #23658f;
+  border-top: 3px solid #23658f; }
+
+.ed-recentPost-highlight .overlay,
+.ed-Post li:nth-child(2n-1) .overlay {
+  background-color: rgba(0, 182, 244, 0.85); }
+
+.page .datepicker .datepicker-switch:hover,
+.page .datepicker .next:hover,
+.page .datepicker .prev:hover,
+.page .datepicker tfoot tr th:hover {
+  color: #00b6f4; }
+
+.page .datepicker table tr td.active.active.focus,
+.page .datepicker table tr td.active.active:focus,
+.page .datepicker table tr td.active.active:hover,
+.page .datepicker table tr td.active.highlighted.active.focus,
+.page .datepicker table tr td.active.highlighted.active:focus,
+.page .datepicker table tr td.active.highlighted.active:hover,
+.page .datepicker table tr td.active.highlighted:active.focus,
+.page .datepicker table tr td.active.highlighted:active:focus,
+.page .datepicker table tr td.active.highlighted:active:hover,
+.page .datepicker table tr td.active:active.focus,
+.page .datepicker table tr td.active:active:focus,
+.page .datepicker table tr td.active:active:hover {
+  border-color: #00b6f4;
+  background: #00b6f4; }
+
+.page .datepicker table tr td.active.active,
+.page .datepicker table tr td.active.highlighted.active,
+.page .datepicker table tr td.active.highlighted:active,
+.page .datepicker table tr td.active:active {
+  border-color: #00b6f4;
+  background: #00b6f4; }
+
+.page .datepicker table tr td.day:hover,
+.page .datepicker table tr td.focused {
+  background: #00b6f4; }
+
+@media (min-width: 768px) {
+  .navbar-collapse ul.navbar-nav li a:hover,
+  .navbar-collapse ul.navbar-nav li a:focus,
+  .navbar-collapse ul.navbar-nav li.active > a,
+  .navbar-collapse ul.navbar-nav li.active > a:hover,
+  .navbar-collapse ul.navbar-nav li.active > a:focus,
+  .navbar-default .navbar-nav > .open > a,
+  .navbar-default .navbar-nav > .open > a:focus,
+  .navbar-default .navbar-nav > .open > a:hover {
+    color: #00b6f4; } }
+/*=== Green ===*/
+.secondary-btn, .secondary-btn:hover, .secondary-btn:focus,
+.datepicker table tr td.day:hover,
+.datepicker table tr td.focused,
+.ed-room-highlight .corner-ribbon span {
+  background-color: #ffbd1e; }
+
+.tp-caption.rs-caption-1 span,
+.popup-inner .headline,
+.ed-blog-post .headline,
+.ed-total-price span.total-price,
+span.policy a,
+.ed-cinfirm-detail li:last-child span:first-child {
+  color: #ffbd1e; }
+
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active.active.focus,
+.datepicker table tr td.active.active:focus,
+.datepicker table tr td.active.active:hover,
+.datepicker table tr td.active.highlighted.active.focus,
+.datepicker table tr td.active.highlighted.active:focus,
+.datepicker table tr td.active.highlighted.active:hover,
+.datepicker table tr td.active.highlighted:active.focus,
+.datepicker table tr td.active.highlighted:active:focus,
+.datepicker table tr td.active.highlighted:active:hover,
+.datepicker table tr td.active:active.focus,
+.datepicker table tr td.active:active:focus,
+.datepicker table tr td.active:active:hover {
+  border-color: #ffbd1e;
+  background: #ffbd1e; }
+
+.datepicker .datepicker-switch:hover,
+.datepicker .next:hover,
+.datepicker .prev:hover,
+.datepicker tfoot tr th:hover,
+.cs-select li.cs-selected > span::after,
+.cs-select ul li:hover, .cs-select li.cs-selected,
+.room-fullwidth .headline a,
+.single-content .room-headline.headline {
+  color: #ffbd1e; }
+
+.ed-room-highlight .corner-ribbon span::before {
+  border-left: 3px solid #a33a3a;
+  border-top: 3px solid #a33a3a; }
+
+.ed-room-highlight .corner-ribbon span::after {
+  border-right: 3px solid #a33a3a;
+  border-top: 3px solid #a33a3a; }
+
+.overlay,
+.ed-Post li:nth-child(2n) .overlay {
+  background-color: rgba(255, 189, 30, 0.85); }
+
+.rs-caption-rating .ed-rating {
+  color: #ffbd1e; }
+
+/*# sourceMappingURL=default.css.map */
