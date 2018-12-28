@@ -151,7 +151,7 @@ public class HouseController {
     }
 
     private void uploadAvartaImage(MultipartFile file, House house) {
-        File uploadRootDir = new File("/home/long/uploads");
+        File uploadRootDir = new File("/home/dat/uploads");
 
         //Tao thu muc goc neu no khong ton tai
         if (!uploadRootDir.exists()) {
@@ -184,7 +184,7 @@ public class HouseController {
     }
 
     private void uploadDetailImages(MultipartFile[] files, House house) {
-        File uploadRootDir = new File("/home/long/uploads");
+        File uploadRootDir = new File("/home/dat/uploads");
 
         //Tao thu muc goc neu no khong ton tai
         if (!uploadRootDir.exists()) {
