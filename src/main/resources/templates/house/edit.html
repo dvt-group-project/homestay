@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>House</title>
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Main CSS-->
+    <link href="../../static/css/create-house.css" rel="stylesheet" media="all" th:href="@{/css/create-house.css}">
+</head>
+
+<body>
+<div class="page-wrapper bg-dark p-t-100 p-b-50">
+    <div class="wrapper wrapper--w900">
+        <div class="card card-6">
+            <div class="card-heading">
+                <h2 class="title">Edit post</h2>
+            </div>
+            <div class="card-body">
+                <th:block th:if="${message}">
+                    <h3 th:text="${message}"></h3>
+                </th:block>
+                <form method="post" th:action="@{/edit-house}" th:object="${house}">
+                    <input type="hidden" th:field="*{id}">
+                    <div class="form-row">
+                        <div class="name">Name</div>
+                        <div class="value">
+                            <input class="input--style-6" type="text" th:field="*{name}" required="required">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Type of house</div>
+                        <select th:field="*{typeOfHouse}" required="required">
+                            <option name="status" value="vip">Vip</option>
+                            <option name="status" value="normal">Normal</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Type of house</div>
+                        <select th:field="*{status}" required="required">
+                            <option name="status" value="available">Available</option>
+                            <option name="status" value="not available">Not Available</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Address</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" th:field="*{address}" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Number of bathroom</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" th:field="*{numberOfBathroom}" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Number of bedroom</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" th:field="*{numberOfBedroom}" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Description</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="textarea--style-6" type="text" th:field="*{description}" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Price per night</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-6" type="text" th:field="*{pricePerNight}" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Upload image</div>
+                        <div class="value">
+                            <div class="input-group js-input-file">
+                                <input class="input-file" type="file" name="file_cv" id="file">
+                                <label class="label--file" for="file">Choose file</label>
+                                <span class="input-file__info">No file chosen</span>
+                            </div>
+                            <div class="label--desc">Upload your image for house. Max file size 50 MB</div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn--radius-2 btn--blue-2" type="submit">Update</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Jquery JS-->
+<script src="../../static/js/jquery.min.js"></script>
+
+
+<!-- Main JS-->
+<script src="../../static/js/create-house.js"></script>
+
+</body>
+
+</html>
