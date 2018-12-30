@@ -17,4 +17,6 @@ public interface HouseService {
     void delete(Integer id);
 
     Iterable<House> findAll();
+
+    Page<House> findAllByAddress(String address, Pageable pageable);
 }

@@ -37,4 +37,9 @@ public class HouseServiceImpl implements HouseService {
     public Iterable<House> findAll() {
         return houseRepository.findAll();
     }
+
+    @Override
+    public Page<House> findAllByAddress(String address, Pageable pageable) {
+        return houseRepository.findAllByAddress(address,pageable);
+    }
 }

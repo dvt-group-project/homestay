@@ -71,6 +71,19 @@ public class House {
         this.reservations = reservations;
     }
 
+    public boolean getStatus() {
+        boolean statusIsLeasing = false;
+        Iterator iterator = reservations.iterator();
+        while (iterator.hasNext()) {
+            Reservation reservation = (Reservation) iterator.next();
+            if ("Leasing".compareTo(reservation.getStatus())==0) {
+                statusIsLeasing = true;
+                break;
+            }
+        }
+        return statusIsLeasing;
+    }
+
     @OneToMany(targetEntity = Reservation.class, mappedBy = "house")
     private Collection<Reservation> reservations;
 
