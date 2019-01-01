@@ -609,320 +609,320 @@
     </section>
 
     <!-- WHITE SECTION -->
-    <section class="white-section common-padding clearfix ">
-        <div class="container">
-            <h2 class="top-headline">Featured Rooms</h2>
-            <div class="underLine">
-                <img th:src="@{/resources/images/underline.png}"
-                     tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/underline.png" alt="underline"
-                     class="img-responsive"/>
-            </div>
-            <div class="row featured">
+    <!--<section class="white-section common-padding clearfix ">-->
+        <!--<div class="container">-->
+            <!--<h2 class="top-headline">Featured Rooms</h2>-->
+            <!--<div class="underLine">-->
+                <!--<img th:src="@{/resources/images/underline.png}"-->
+                     <!--tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/underline.png" alt="underline"-->
+                     <!--class="img-responsive"/>-->
+            <!--</div>-->
+            <!--<div class="row featured" th:each="house: ${houses}">-->
 
-                <div class="col-sm-4 col-xs-12">
-                    <figure class="ed-room ed-room-highlight featured-room">
-                        <a href="#slider-container1" class="popup-modal">
-                            <img th:src="@{/resources/images/sample-rm3.jpg}"
-                                 tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/sample-rm3.jpg"
-                                 alt="Image" class="img-responsive">
-                            <div class="corner-ribbon"><span>50% OFF</span></div>
-                            <i class="room-zoom fa fa-search"></i>
-                            <figcaption>
-                                <h3 class="headline">Luxury Couple Suit</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard. Lorem Ips</p>
-                                <div class="room-price">$149<span>Per Night</span></div>
-                                <div class="ed-member">2<span>Adults</span></div>
-                            </figcaption>
-                        </a>
-                    </figure>
-                    <div class="row">
-                        <div class="col-xs-6 align-left left-btn">
-                            <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html%27"
-                               tppabs="http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html"
-                               class="btn bordered-btn">View Details</a>
-                        </div>
-                        <div class="col-xs-6 align-right right-btn">
-                            <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"
-                               tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"
-                               class="btn primary-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
+                <!--<div class="col-sm-4 col-xs-12">-->
+                    <!--<figure class="ed-room ed-room-highlight featured-room">-->
+                        <!--<a href="#slider-container1" class="popup-modal">-->
+                            <!--<img th:src="@{/resources/__${house.getUrl()}__}"-->
+                                 <!--tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/sample-rm3.jpg"-->
+                                 <!--alt="Image" class="img-responsive">-->
+                            <!--<div class="corner-ribbon"><span>50% OFF</span></div>-->
+                            <!--<i class="room-zoom fa fa-search"></i>-->
+                            <!--<figcaption>-->
+                                <!--<h3 class="headline">Luxury Couple Suit</h3>-->
+                                <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem-->
+                                    <!--Ipsum has been the industry's standard. Lorem Ips</p>-->
+                                <!--<div class="room-price">$149<span>Per Night</span></div>-->
+                                <!--<div class="ed-member">2<span>Adults</span></div>-->
+                            <!--</figcaption>-->
+                        <!--</a>-->
+                    <!--</figure>-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-xs-6 align-left left-btn">-->
+                            <!--<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html%27"-->
+                               <!--tppabs="http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html"-->
+                               <!--class="btn bordered-btn">View Details</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-6 align-right right-btn">-->
+                            <!--<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"-->
+                               <!--tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"-->
+                               <!--class="btn primary-btn">Book Now</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <!-- POPUP -->
-                <div id="slider-container1" class="white-popup-block mfp-hide room-fullwidth">
+                <!--&lt;!&ndash; POPUP &ndash;&gt;-->
+                <!--<div id="slider-container1" class="white-popup-block mfp-hide room-fullwidth">-->
 
-                    <div class="popup-img">
-                        <img th:src="@{/resources/images/popup-img1.jpg}"
-                             tppabs="http://demo.themefisher.com/iamabdus/eden/images/room/popup-img1.jpg" alt="image"/>
-                    </div>
+                    <!--<div class="popup-img">-->
+                        <!--<img th:src="@{/resources/images/popup-img1.jpg}"-->
+                             <!--tppabs="http://demo.themefisher.com/iamabdus/eden/images/room/popup-img1.jpg" alt="image"/>-->
+                    <!--</div>-->
 
-                    <div class="popup-inner">
-                        <h3 class="headline">Delux STUDIO</h3>
-                        <div class="room-price">$100<span>Per Night( 1 Room, 1 Bed for max 2 Persons )</span></div>
-                        <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"
-                           tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"
-                           class="btn primary-btn">Book Now</a>
-                        <div class="ed-tab">
-                            <div class="tab-control">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active">
-                                        <a href="#details" aria-controls="details" role="tab"
-                                           data-toggle="tab">Details</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#facilities" aria-controls="facilities" role="tab" data-toggle="tab">Facilities</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#conditions" aria-controls="conditions" role="tab" data-toggle="tab">Conditions</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#reviews" aria-controls="reviews" role="tab"
-                                           data-toggle="tab">Reviews</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <!--<div class="popup-inner">-->
+                        <!--<h3 class="headline">Delux STUDIO</h3>-->
+                        <!--<div class="room-price">$100<span>Per Night( 1 Room, 1 Bed for max 2 Persons )</span></div>-->
+                        <!--<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"-->
+                           <!--tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"-->
+                           <!--class="btn primary-btn">Book Now</a>-->
+                        <!--<div class="ed-tab">-->
+                            <!--<div class="tab-control">-->
+                                <!--<ul class="nav nav-tabs" role="tablist">-->
+                                    <!--<li role="presentation" class="active">-->
+                                        <!--<a href="#details" aria-controls="details" role="tab"-->
+                                           <!--data-toggle="tab">Details</a>-->
+                                    <!--</li>-->
+                                    <!--<li role="presentation">-->
+                                        <!--<a href="#facilities" aria-controls="facilities" role="tab" data-toggle="tab">Facilities</a>-->
+                                    <!--</li>-->
+                                    <!--<li role="presentation">-->
+                                        <!--<a href="#conditions" aria-controls="conditions" role="tab" data-toggle="tab">Conditions</a>-->
+                                    <!--</li>-->
+                                    <!--<li role="presentation">-->
+                                        <!--<a href="#reviews" aria-controls="reviews" role="tab"-->
+                                           <!--data-toggle="tab">Reviews</a>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
 
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="details">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="facilities">
-                                    <ul>
-                                        <li><span class="icomoon-tea"></span>Name of Facility</li>
-                                        <li><span class="icomoon-people"></span>Name of Facility</li>
-                                        <li><span class="icomoon-parking"></span>Name of Facility</li>
-                                        <li><span class="icomoon-television"></span>Name of Facility</li>
-                                        <li><span class="icomoon-wifi"></span>Name of Facility</li>
-                                        <li><span class="icomoon-smoke-free"></span>Name of Facility</li>
-                                        <li><span class="icomoon-drink5"></span>Name of Facility</li>
-                                        <li><span class="icomoon-phone3"></span>Name of Facility</li>
-                                        <li><span class="icomoon-parking"></span>Name of Facility</li>
-                                    </ul>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="conditions">Lorem ipsum dolor sit amet,
-                                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="reviews">Lorem ipsum dolor sit amet,
-                                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <!--<div class="tab-content">-->
+                                <!--<div role="tabpanel" class="tab-pane active" id="details">-->
+                                    <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor-->
+                                    <!--incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.-->
+                                <!--</div>-->
+                                <!--<div role="tabpanel" class="tab-pane" id="facilities">-->
+                                    <!--<ul>-->
+                                        <!--<li><span class="icomoon-tea"></span>Name of Facility</li>-->
+                                        <!--<li><span class="icomoon-people"></span>Name of Facility</li>-->
+                                        <!--<li><span class="icomoon-parking"></span>Name of Facility</li>-->
+                                        <!--<li><span class="icomoon-television"></span>Name of Facility</li>-->
+                                        <!--<li><span class="icomoon-wifi"></span>Name of Facility</li>-->
+                                        <!--<li><span class="icomoon-smoke-free"></span>Name of Facility</li>-->
+                                        <!--<li><span class="icomoon-drink5"></span>Name of Facility</li>-->
+                                        <!--<li><span class="icomoon-phone3"></span>Name of Facility</li>-->
+                                        <!--<li><span class="icomoon-parking"></span>Name of Facility</li>-->
+                                    <!--</ul>-->
+                                <!--</div>-->
+                                <!--<div role="tabpanel" class="tab-pane" id="conditions">Lorem ipsum dolor sit amet,-->
+                                    <!--consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore-->
+                                    <!--magna aliqua. Ut enim ad minim veniam quis nostrud.-->
+                                <!--</div>-->
+                                <!--<div role="tabpanel" class="tab-pane" id="reviews">Lorem ipsum dolor sit amet,-->
+                                    <!--consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore-->
+                                    <!--magna aliqua. Ut enim ad minim veniam quis nostrud.-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
 
-                    <p><a class="popup-modal-dismiss" href="#">
-                        <span class="icomoon-cancel3"></span>
-                    </a></p>
+                    <!--<p><a class="popup-modal-dismiss" href="#">-->
+                        <!--<span class="icomoon-cancel3"></span>-->
+                    <!--</a></p>-->
 
-                </div>
+                <!--</div>-->
 
-                <div class="col-sm-4 col-xs-12">
-                    <figure class="ed-room ed-room-highlight featured-room">
-                        <a href="#slider-container2" class="popup-modal">
-                            <img th:src="@{/resources/images/sample-rm4.jpg}"
-                                 tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/sample-rm4.jpg"
-                                 alt="Image" class="img-responsive">
-                            <i class="room-zoom fa fa-search"></i>
-                            <figcaption>
-                                <h3 class="headline">Luxury Couple Suit</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard. Lorem Ips</p>
-                                <div class="room-price">$149<span>Per Night</span></div>
-                                <div class="ed-member">2<span>Adults</span></div>
-                            </figcaption>
-                        </a>
-                    </figure>
-                    <div class="row">
-                        <div class="col-xs-6 align-left left-btn">
-                            <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html%27"
-                               tppabs="http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html"
-                               class="btn bordered-btn">View Details</a>
-                        </div>
-                        <div class="col-xs-6 align-right right-btn">
-                            <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"
-                               tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"
-                               class="btn primary-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
+                <!--&lt;!&ndash;<div class="col-sm-4 col-xs-12">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<figure class="ed-room ed-room-highlight featured-room">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a href="#slider-container2" class="popup-modal">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<img th:src="@{/resources/images/sample-rm4.jpg}"&ndash;&gt;-->
+                                 <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/sample-rm4.jpg"&ndash;&gt;-->
+                                 <!--&lt;!&ndash;alt="Image" class="img-responsive">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="room-zoom fa fa-search"></i>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<figcaption>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<h3 class="headline">Luxury Couple Suit</h3>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem&ndash;&gt;-->
+                                    <!--&lt;!&ndash;Ipsum has been the industry's standard. Lorem Ips</p>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="room-price">$149<span>Per Night</span></div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="ed-member">2<span>Adults</span></div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</figcaption>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</figure>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="col-xs-6 align-left left-btn">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html%27"&ndash;&gt;-->
+                               <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html"&ndash;&gt;-->
+                               <!--&lt;!&ndash;class="btn bordered-btn">View Details</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="col-xs-6 align-right right-btn">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"&ndash;&gt;-->
+                               <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"&ndash;&gt;-->
+                               <!--&lt;!&ndash;class="btn primary-btn">Book Now</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                <!-- POPUP -->
-                <div id="slider-container2" class="white-popup-block mfp-hide room-fullwidth">
+                <!--&lt;!&ndash;&lt;!&ndash; POPUP &ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<div id="slider-container2" class="white-popup-block mfp-hide room-fullwidth">&ndash;&gt;-->
 
-                    <div class="popup-img">
-                        <img th:src="@{/resources/images/room-img5.jpg}"
-                             tppabs="http://demo.themefisher.com/iamabdus/eden/images/room/room-img5.jpg" alt="image"/>
-                    </div>
+                    <!--&lt;!&ndash;<div class="popup-img">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img th:src="@{/resources/images/room-img5.jpg}"&ndash;&gt;-->
+                             <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/images/room/room-img5.jpg" alt="image"/>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                    <div class="popup-inner">
-                        <h3 class="headline">Delux STUDIO</h3>
-                        <div class="room-price">$100<span>Per Night( 1 Room, 1 Bed for max 2 Persons )</span></div>
-                        <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"
-                           tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"
-                           class="btn primary-btn">Book Now</a>
-                        <div class="ed-tab">
-                            <div class="tab-control">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active">
-                                        <a href="#details" aria-controls="details" role="tab"
-                                           data-toggle="tab">Details</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#facilities" aria-controls="facilities" role="tab" data-toggle="tab">Facilities</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#conditions" aria-controls="conditions" role="tab" data-toggle="tab">Conditions</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#reviews" aria-controls="reviews" role="tab"
-                                           data-toggle="tab">Reviews</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <!--&lt;!&ndash;<div class="popup-inner">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<h3 class="headline">Delux STUDIO</h3>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="room-price">$100<span>Per Night( 1 Room, 1 Bed for max 2 Persons )</span></div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"&ndash;&gt;-->
+                           <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"&ndash;&gt;-->
+                           <!--&lt;!&ndash;class="btn primary-btn">Book Now</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="ed-tab">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="tab-control">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<ul class="nav nav-tabs" role="tablist">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li role="presentation" class="active">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#details" aria-controls="details" role="tab"&ndash;&gt;-->
+                                           <!--&lt;!&ndash;data-toggle="tab">Details</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li role="presentation">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#facilities" aria-controls="facilities" role="tab" data-toggle="tab">Facilities</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li role="presentation">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#conditions" aria-controls="conditions" role="tab" data-toggle="tab">Conditions</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li role="presentation">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#reviews" aria-controls="reviews" role="tab"&ndash;&gt;-->
+                                           <!--&lt;!&ndash;data-toggle="tab">Reviews</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="details">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="facilities">
-                                    <ul>
-                                        <li><span class="icomoon-tea"></span>Name of Facility</li>
-                                        <li><span class="icomoon-people"></span>Name of Facility</li>
-                                        <li><span class="icomoon-parking"></span>Name of Facility</li>
-                                        <li><span class="icomoon-television"></span>Name of Facility</li>
-                                        <li><span class="icomoon-wifi"></span>Name of Facility</li>
-                                        <li><span class="icomoon-smoke-free"></span>Name of Facility</li>
-                                        <li><span class="icomoon-drink5"></span>Name of Facility</li>
-                                        <li><span class="icomoon-phone3"></span>Name of Facility</li>
-                                        <li><span class="icomoon-parking"></span>Name of Facility</li>
-                                    </ul>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="conditions">Lorem ipsum dolor sit amet,
-                                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="reviews">Lorem ipsum dolor sit amet,
-                                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <!--&lt;!&ndash;<div class="tab-content">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div role="tabpanel" class="tab-pane active" id="details">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&ndash;&gt;-->
+                                    <!--&lt;!&ndash;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div role="tabpanel" class="tab-pane" id="facilities">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-tea"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-people"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-parking"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-television"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-wifi"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-smoke-free"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-drink5"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-phone3"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-parking"></span>Name of Facility</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div role="tabpanel" class="tab-pane" id="conditions">Lorem ipsum dolor sit amet,&ndash;&gt;-->
+                                    <!--&lt;!&ndash;consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore&ndash;&gt;-->
+                                    <!--&lt;!&ndash;magna aliqua. Ut enim ad minim veniam quis nostrud.&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div role="tabpanel" class="tab-pane" id="reviews">Lorem ipsum dolor sit amet,&ndash;&gt;-->
+                                    <!--&lt;!&ndash;consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore&ndash;&gt;-->
+                                    <!--&lt;!&ndash;magna aliqua. Ut enim ad minim veniam quis nostrud.&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                    <p><a class="popup-modal-dismiss" href="#">
-                        <span class="icomoon-cancel3"></span>
-                    </a></p>
+                    <!--&lt;!&ndash;<p><a class="popup-modal-dismiss" href="#">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span class="icomoon-cancel3"></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a></p>&ndash;&gt;-->
 
-                </div>
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                <div class="col-sm-4 col-xs-12">
-                    <figure class="ed-room ed-room-highlight featured-room">
-                        <a href="#slider-container3" class="popup-modal">
-                            <img th:src="@{/resources/images/sample-rm5.jpg}"
-                                 tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/sample-rm5.jpg"
-                                 alt="Image" class="img-responsive">
-                            <i class="room-zoom fa fa-search"></i>
-                            <figcaption>
-                                <h3 class="headline">Luxury Couple Suit</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard. Lorem Ips</p>
-                                <div class="room-price">$149<span>Per Night</span></div>
-                                <div class="ed-member">2<span>Adults</span></div>
-                            </figcaption>
-                        </a>
-                    </figure>
-                    <div class="row">
-                        <div class="col-xs-6 align-left left-btn">
-                            <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html%27"
-                               tppabs="http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html"
-                               class="btn bordered-btn">View Details</a>
-                        </div>
-                        <div class="col-xs-6 align-right right-btn">
-                            <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"
-                               tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"
-                               class="btn primary-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
+                <!--&lt;!&ndash;<div class="col-sm-4 col-xs-12">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<figure class="ed-room ed-room-highlight featured-room">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a href="#slider-container3" class="popup-modal">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<img th:src="@{/resources/images/sample-rm5.jpg}"&ndash;&gt;-->
+                                 <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/sample-rm5.jpg"&ndash;&gt;-->
+                                 <!--&lt;!&ndash;alt="Image" class="img-responsive">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="room-zoom fa fa-search"></i>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<figcaption>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<h3 class="headline">Luxury Couple Suit</h3>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem&ndash;&gt;-->
+                                    <!--&lt;!&ndash;Ipsum has been the industry's standard. Lorem Ips</p>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="room-price">$149<span>Per Night</span></div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="ed-member">2<span>Adults</span></div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</figcaption>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</figure>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="col-xs-6 align-left left-btn">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html%27"&ndash;&gt;-->
+                               <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/room-single-fullwidth.html"&ndash;&gt;-->
+                               <!--&lt;!&ndash;class="btn bordered-btn">View Details</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="col-xs-6 align-right right-btn">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"&ndash;&gt;-->
+                               <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"&ndash;&gt;-->
+                               <!--&lt;!&ndash;class="btn primary-btn">Book Now</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                <!-- POPUP -->
-                <div id="slider-container3" class="white-popup-block mfp-hide room-fullwidth">
+                <!--&lt;!&ndash;&lt;!&ndash; POPUP &ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;<div id="slider-container3" class="white-popup-block mfp-hide room-fullwidth">&ndash;&gt;-->
 
-                    <div class="popup-img">
-                        <img th:src="@{/resources/images/popup-img1.jpg}"
-                             tppabs="http://demo.themefisher.com/iamabdus/eden/images/room/popup-img1.jpg" alt="image"/>
-                    </div>
+                    <!--&lt;!&ndash;<div class="popup-img">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<img th:src="@{/resources/images/popup-img1.jpg}"&ndash;&gt;-->
+                             <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/images/room/popup-img1.jpg" alt="image"/>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                    <div class="popup-inner">
-                        <h3 class="headline">Delux STUDIO</h3>
-                        <div class="room-price">$100<span>Per Night( 1 Room, 1 Bed for max 2 Persons )</span></div>
-                        <a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"
-                           tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"
-                           class="btn primary-btn">Book Now</a>
-                        <div class="ed-tab">
-                            <div class="tab-control">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active">
-                                        <a href="#details" aria-controls="details" role="tab"
-                                           data-toggle="tab">Details</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#facilities" aria-controls="facilities" role="tab" data-toggle="tab">Facilities</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#conditions" aria-controls="conditions" role="tab" data-toggle="tab">Conditions</a>
-                                    </li>
-                                    <li role="presentation">
-                                        <a href="#reviews" aria-controls="reviews" role="tab"
-                                           data-toggle="tab">Reviews</a>
-                                    </li>
-                                </ul>
-                            </div>
+                    <!--&lt;!&ndash;<div class="popup-inner">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<h3 class="headline">Delux STUDIO</h3>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="room-price">$100<span>Per Night( 1 Room, 1 Bed for max 2 Persons )</span></div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a href="javascript:if(confirm(%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a path excluded by the site\%27s Robot Exclusion parameters.  (Teleport Pro\%27s compliance with this system is optional; see the Project Properties, Netiquette page.)  \n\nDo you want to open it from the server?%27))window.location=%27http://demo.themefisher.com/iamabdus/eden/booking-steps.html%27"&ndash;&gt;-->
+                           <!--&lt;!&ndash;tppabs="http://demo.themefisher.com/iamabdus/eden/booking-steps.html"&ndash;&gt;-->
+                           <!--&lt;!&ndash;class="btn primary-btn">Book Now</a>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="ed-tab">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="tab-control">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<ul class="nav nav-tabs" role="tablist">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li role="presentation" class="active">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#details" aria-controls="details" role="tab"&ndash;&gt;-->
+                                           <!--&lt;!&ndash;data-toggle="tab">Details</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li role="presentation">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#facilities" aria-controls="facilities" role="tab" data-toggle="tab">Facilities</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li role="presentation">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#conditions" aria-controls="conditions" role="tab" data-toggle="tab">Conditions</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li role="presentation">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#reviews" aria-controls="reviews" role="tab"&ndash;&gt;-->
+                                           <!--&lt;!&ndash;data-toggle="tab">Reviews</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="details">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="facilities">
-                                    <ul>
-                                        <li><span class="icomoon-tea"></span>Name of Facility</li>
-                                        <li><span class="icomoon-people"></span>Name of Facility</li>
-                                        <li><span class="icomoon-parking"></span>Name of Facility</li>
-                                        <li><span class="icomoon-television"></span>Name of Facility</li>
-                                        <li><span class="icomoon-wifi"></span>Name of Facility</li>
-                                        <li><span class="icomoon-smoke-free"></span>Name of Facility</li>
-                                        <li><span class="icomoon-drink5"></span>Name of Facility</li>
-                                        <li><span class="icomoon-phone3"></span>Name of Facility</li>
-                                        <li><span class="icomoon-parking"></span>Name of Facility</li>
-                                    </ul>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="conditions">Lorem ipsum dolor sit amet,
-                                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="reviews">Lorem ipsum dolor sit amet,
-                                    consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam quis nostrud.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <!--&lt;!&ndash;<div class="tab-content">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div role="tabpanel" class="tab-pane active" id="details">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor&ndash;&gt;-->
+                                    <!--&lt;!&ndash;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div role="tabpanel" class="tab-pane" id="facilities">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-tea"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-people"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-parking"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-television"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-wifi"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-smoke-free"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-drink5"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-phone3"></span>Name of Facility</li>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li><span class="icomoon-parking"></span>Name of Facility</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div role="tabpanel" class="tab-pane" id="conditions">Lorem ipsum dolor sit amet,&ndash;&gt;-->
+                                    <!--&lt;!&ndash;consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore&ndash;&gt;-->
+                                    <!--&lt;!&ndash;magna aliqua. Ut enim ad minim veniam quis nostrud.&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div role="tabpanel" class="tab-pane" id="reviews">Lorem ipsum dolor sit amet,&ndash;&gt;-->
+                                    <!--&lt;!&ndash;consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore&ndash;&gt;-->
+                                    <!--&lt;!&ndash;magna aliqua. Ut enim ad minim veniam quis nostrud.&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-                    <p><a class="popup-modal-dismiss" href="#">
-                        <span class="icomoon-cancel3"></span>
-                    </a></p>
+                    <!--&lt;!&ndash;<p><a class="popup-modal-dismiss" href="#">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span class="icomoon-cancel3"></span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a></p>&ndash;&gt;-->
 
-                </div>
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-            </div>
-        </div>
-    </section>
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
     <section class="white-section common-padding clearfix">
         <div class="container">
             <h2 class="top-headline">Featured Rooms</h2>
