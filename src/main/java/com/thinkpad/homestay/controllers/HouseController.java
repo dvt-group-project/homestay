@@ -128,8 +128,14 @@ public class HouseController {
     @GetMapping("/search")
     public ModelAndView search(@RequestParam("address") String address,@PageableDefault(3) Pageable pageable) {
         Page<House> houses = houseService.findAllByAddress(address,pageable);
-        ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("houses", houses);
+        List<House> leasingHouse = new ArrayList<>();
+        for (House house:houses) {
+            if (house.getStatus()==true) {
+                leasingHouse.add(house);
+            }
+        }
+            ModelAndView modelAndView = new ModelAndView("house/rooms-list");
+        modelAndView.addObject("houses", leasingHouse);
         return modelAndView;
     }
     public ModelAndView doUpload(MultipartFile avartaImage, MultipartFile[] files, House house) {
