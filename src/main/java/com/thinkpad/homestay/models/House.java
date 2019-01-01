@@ -76,7 +76,7 @@ public class House {
         Iterator iterator = reservations.iterator();
         while (iterator.hasNext()) {
             Reservation reservation = (Reservation) iterator.next();
-            if ("Leasing".compareTo(reservation.getStatus())==0) {
+            if ("leasing".compareTo(reservation.getStatus())==0) {
                 statusIsLeasing = true;
                 break;
             }
