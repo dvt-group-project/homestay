@@ -1365,12 +1365,12 @@ div.cs-select {
 }
 @media (min-width: 992px) {
   .cs-select.ed-select .cs-options {
-    width: 93%;
+    width: 100%;
   }
 }
 @media (min-width: 1200px) {
   .cs-select.ed-select .cs-options {
-    width: 95%;
+    width: 97%;
   }
 }
 
