@@ -28,9 +28,9 @@ public class Reservation {
 
     private String status;
 
-//    @ManyToOne(targetEntity = User.class)
-//    @JoinColumn(name = "user_id")
-//    private User user_id;
+    @ManyToOne(targetEntity = User.class)
+    @JoinColumn(name = "user_id")
+    private User user_id;
 
     @ManyToOne(targetEntity = House.class)
     @JoinColumn(name = "house_id")

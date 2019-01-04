@@ -139,7 +139,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rooms List View</a>
                   <ul class="dropdown-menu">
-                    <li><a href="rooms-list.html"
+                    <li><a href="list.html"
                            tppabs="http://demo.themefisher.com/iamabdus/eden/rooms-list-fullwidth.html">Fullwidth</a>
                     </li>
                     <li>
@@ -436,108 +436,125 @@
                 <h2 class="headline">Make Reservation</h2>
                 <div class="block-inner">
                   <div class="row">
-                    <div class="col-xs-12">
-                      <div class="input-group date ed-datepicker" data-provide="datepicker">
-                        <input type="text" class="form-control" placeholder="Arival">
-                        <div class="input-group-addon">
-                            <span class="icomoon-calendar"></span>
-                        </div>
-                      </div>
-                    </div>
+	                  <form method="post" th:action="@{/booknow}" th:object="${reservation}" onsubmit="alert('Booking successfully. We will contact you as soon as. Tks for choosing us')">
+		                  <input type="hidden" th:field="*{id}">
+		                  <input type="hidden" name="user_id" th:value="${user.id}">
+		                  <input type="hidden" name="house" th:value="${house.id}">
+		                  <div class="form-group">
+			                  <span class="form-label">Check In</span>
+			                  <input class="form-control" type="date" required th:field="*{checkInDate}">
+		                  </div>
+		                  <div class="form-group">
+			                  <span class="form-label">Check out</span>
+			                  <input class="form-control" type="date" required th:field="*{checkOutDate}">
+		                  </div>
+		                  <div class="col-xs-12">
+			                  <button type="submit" class="btn primary-btn ckech-btn">Book now</button>
+		                  </div>
+	                  </form>
 
-                    <div class="col-xs-6">
-                      <div class="cs-select ed-select" tabindex="0">
-                        <div class="cs-options">
-                          <ul>
-                            <li data-option="" data-value="1"><span>1</span></li>
-                            <li data-option="" data-value="2"><span>2</span></li>
-                            <li data-option="" data-value="3"><span>3</span></li>
-                            <li data-option="" data-value="4"><span>4</span></li>
-                            <li data-option="" data-value="5"><span>5</span></li>
-                            <li data-option="" data-value="6"><span>6</span></li>
-                            <li data-option="" data-value="7"><span>7</span></li>
-                            <li data-option="" data-value="7+"><span>7+</span></li>
-                          </ul>
-                        </div>
-                        <select class="cs-select">
-                          <option value="" disabled="disabled" selected="selected">Nights</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="7+">7+</option>
-                        </select>
-                      </div>
-                    </div>
+                    <!--<div class="col-xs-12">-->
+                      <!--<div class="input-group date ed-datepicker" data-provide="datepicker">-->
+                        <!--<input type="text" class="form-control" placeholder="Arival">-->
+                        <!--<div class="input-group-addon">-->
+                            <!--<span class="icomoon-calendar"></span>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="col-xs-6">
-                      <div class="cs-select ed-select" tabindex="0">
-                        <div class="cs-options">
-                          <ul>
-                            <li data-option="" data-value="1"><span>1</span></li>
-                            <li data-option="" data-value="2"><span>2</span></li>
-                            <li data-option="" data-value="3"><span>3</span></li>
-                            <li data-option="" data-value="4"><span>4</span></li>
-                          </ul>
-                        </div>
-                        <select class="cs-select">
-                          <option value="" disabled="disabled" selected="selected">Adults</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                        </select>
-                      </div>
-                    </div>
+                    <!--<div class="col-xs-6">-->
+                      <!--<div class="cs-select ed-select" tabindex="0">-->
+                        <!--<div class="cs-options">-->
+                          <!--<ul>-->
+                            <!--<li data-option="" data-value="1"><span>1</span></li>-->
+                            <!--<li data-option="" data-value="2"><span>2</span></li>-->
+                            <!--<li data-option="" data-value="3"><span>3</span></li>-->
+                            <!--<li data-option="" data-value="4"><span>4</span></li>-->
+                            <!--<li data-option="" data-value="5"><span>5</span></li>-->
+                            <!--<li data-option="" data-value="6"><span>6</span></li>-->
+                            <!--<li data-option="" data-value="7"><span>7</span></li>-->
+                            <!--<li data-option="" data-value="7+"><span>7+</span></li>-->
+                          <!--</ul>-->
+                        <!--</div>-->
+                        <!--<select class="cs-select">-->
+                          <!--<option value="" disabled="disabled" selected="selected">Nights</option>-->
+                          <!--<option value="1">1</option>-->
+                          <!--<option value="2">2</option>-->
+                          <!--<option value="3">3</option>-->
+                          <!--<option value="4">4</option>-->
+                          <!--<option value="5">5</option>-->
+                          <!--<option value="6">6</option>-->
+                          <!--<option value="7">7</option>-->
+                          <!--<option value="7+">7+</option>-->
+                        <!--</select>-->
+                      <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="col-xs-6">
-                      <div class="cs-select ed-select" tabindex="0">
-                        <div class="cs-options">
-                          <ul>
-                            <li data-option="" data-value="1"><span>1</span></li>
-                            <li data-option="" data-value="2"><span>2</span></li>
-                            <li data-option="" data-value="3"><span>3</span></li>
-                            <li data-option="" data-value="4"><span>4</span></li>
-                            <li data-option="" data-value="5"><span>5</span></li>
-                          </ul>
-                        </div>
-                        <select class="cs-select">
-                          <option value="" disabled="disabled" selected="selected">Children</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                      </div>
-                    </div>
+                    <!--<div class="col-xs-6">-->
+                      <!--<div class="cs-select ed-select" tabindex="0">-->
+                        <!--<div class="cs-options">-->
+                          <!--<ul>-->
+                            <!--<li data-option="" data-value="1"><span>1</span></li>-->
+                            <!--<li data-option="" data-value="2"><span>2</span></li>-->
+                            <!--<li data-option="" data-value="3"><span>3</span></li>-->
+                            <!--<li data-option="" data-value="4"><span>4</span></li>-->
+                          <!--</ul>-->
+                        <!--</div>-->
+                        <!--<select class="cs-select">-->
+                          <!--<option value="" disabled="disabled" selected="selected">Adults</option>-->
+                          <!--<option value="1">1</option>-->
+                          <!--<option value="2">2</option>-->
+                          <!--<option value="3">3</option>-->
+                          <!--<option value="4">4</option>-->
+                        <!--</select>-->
+                      <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="col-xs-6">
-                      <div class="cs-select ed-select" tabindex="0">
-                        <div class="cs-options">
-                          <ul>
-                            <li data-option="" data-value="1"><span>1</span></li>
-                            <li data-option="" data-value="2"><span>2</span></li>
-                            <li data-option="" data-value="3"><span>3</span></li>
-                            <li data-option="" data-value="4"><span>4</span></li>
-                          </ul>
-                        </div>
-                        <select class="cs-select">
-                          <option value="" disabled="disabled" selected="selected">Rooms</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                        </select>
-                      </div>
-                    </div>
+                    <!--<div class="col-xs-6">-->
+                      <!--<div class="cs-select ed-select" tabindex="0">-->
+                        <!--<div class="cs-options">-->
+                          <!--<ul>-->
+                            <!--<li data-option="" data-value="1"><span>1</span></li>-->
+                            <!--<li data-option="" data-value="2"><span>2</span></li>-->
+                            <!--<li data-option="" data-value="3"><span>3</span></li>-->
+                            <!--<li data-option="" data-value="4"><span>4</span></li>-->
+                            <!--<li data-option="" data-value="5"><span>5</span></li>-->
+                          <!--</ul>-->
+                        <!--</div>-->
+                        <!--<select class="cs-select">-->
+                          <!--<option value="" disabled="disabled" selected="selected">Children</option>-->
+                          <!--<option value="1">1</option>-->
+                          <!--<option value="2">2</option>-->
+                          <!--<option value="3">3</option>-->
+                          <!--<option value="4">4</option>-->
+                          <!--<option value="5">5</option>-->
+                        <!--</select>-->
+                      <!--</div>-->
+                    <!--</div>-->
 
-                    <div class="col-xs-12">
-                      <button type="submit" class="btn primary-btn ckech-btn">Check availability</button>
-                    </div>
+                    <!--<div class="col-xs-6">-->
+                      <!--<div class="cs-select ed-select" tabindex="0">-->
+                        <!--<div class="cs-options">-->
+                          <!--<ul>-->
+                            <!--<li data-option="" data-value="1"><span>1</span></li>-->
+                            <!--<li data-option="" data-value="2"><span>2</span></li>-->
+                            <!--<li data-option="" data-value="3"><span>3</span></li>-->
+                            <!--<li data-option="" data-value="4"><span>4</span></li>-->
+                          <!--</ul>-->
+                        <!--</div>-->
+                        <!--<select class="cs-select">-->
+                          <!--<option value="" disabled="disabled" selected="selected">Rooms</option>-->
+                          <!--<option value="1">1</option>-->
+                          <!--<option value="2">2</option>-->
+                          <!--<option value="3">3</option>-->
+                          <!--<option value="4">4</option>-->
+                        <!--</select>-->
+                      <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="col-xs-12">-->
+                      <!--<button type="submit" class="btn primary-btn ckech-btn">Book Now</button>-->
+                    <!--</div>-->
                   </div>
                 </div>
               </div>

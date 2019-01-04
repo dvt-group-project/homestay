@@ -5,6 +5,7 @@ import com.thinkpad.homestay.models.ImageHouse;
 import com.thinkpad.homestay.models.Reservation;
 import com.thinkpad.homestay.services.HouseService;
 import com.thinkpad.homestay.services.ImageHouseService;
+import com.thinkpad.homestay.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,6 +28,8 @@ import java.util.Date;
 
 @Controller
 public class HouseController {
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private ImageHouseService imageHouseService;
@@ -49,6 +52,7 @@ public class HouseController {
         modelAndView.addObject("reservation", new Reservation());
         modelAndView.addObject("imageHouseList", imageHouseList);
         modelAndView.addObject("userName", userName);
+        modelAndView.addObject("user", userService.findByName(userName));
 //        Collection<ImageHouse> imageHouses = house.get().imageHouses;
 //        Iterator iterator = imageHouses.iterator();
 //        while (iterator.hasNext()) {
@@ -76,7 +80,7 @@ public class HouseController {
     @GetMapping("/houses")
     public ModelAndView listHouse(@PageableDefault(5) Pageable pageable) {
         Page<House> houses = houseService.findAll(pageable);
-        return new ModelAndView("house/rooms-list", "houses", houses);
+        return new ModelAndView("house/list", "houses", houses);
     }
 
     @GetMapping("/create-house")
