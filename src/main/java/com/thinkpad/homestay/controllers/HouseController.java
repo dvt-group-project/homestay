@@ -134,11 +134,11 @@ public class HouseController {
         Page<House> houses = houseService.findAllByAddress(address,pageable);
         List<House> leasingHouse = new ArrayList<>();
         for (House house:houses) {
-            if (house.getStatus()==true) {
+            if (house.getStatus()) {
                 leasingHouse.add(house);
             }
         }
-            ModelAndView modelAndView = new ModelAndView("house/rooms-list");
+            ModelAndView modelAndView = new ModelAndView("house/list");
         modelAndView.addObject("houses", leasingHouse);
         return modelAndView;
     }
@@ -168,7 +168,7 @@ public class HouseController {
     }
 
     private void uploadAvartaImage(MultipartFile file, House house) {
-        File uploadRootDir = new File("/home/dat/uploads");
+        File uploadRootDir = new File("/home/long/uploads");
 
         //Tao thu muc goc neu no khong ton tai
         if (!uploadRootDir.exists()) {
@@ -201,7 +201,7 @@ public class HouseController {
     }
 
     private void uploadDetailImages(MultipartFile[] files, House house) {
-        File uploadRootDir = new File("/home/dat/uploads");
+        File uploadRootDir = new File("/home/long/uploads");
 
         //Tao thu muc goc neu no khong ton tai
         if (!uploadRootDir.exists()) {

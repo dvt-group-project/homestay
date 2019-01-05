@@ -5,6 +5,7 @@ import com.thinkpad.homestay.services.HouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -26,11 +27,13 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    public ModelAndView home() {
+    public ModelAndView home(@PageableDefault(3) Pageable pageable) {
         String userName = getUserName();
+        Page<House> houses = houseService.findAll(pageable);
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("userName", userName);
         modelAndView.addObject("addresses",listAddress());
+        modelAndView.addObject("houses", houses);
         return modelAndView;
     }
 
