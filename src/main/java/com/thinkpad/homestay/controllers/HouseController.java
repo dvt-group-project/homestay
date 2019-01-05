@@ -1,5 +1,6 @@
 package com.thinkpad.homestay.controllers;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.thinkpad.homestay.models.House;
 import com.thinkpad.homestay.models.ImageHouse;
 import com.thinkpad.homestay.models.Reservation;
@@ -128,7 +129,19 @@ public class HouseController {
         return modelAndView;
     }
 
-
+    @GetMapping("/search")
+    public ModelAndView search(@RequestParam("address") String address,@PageableDefault(3) Pageable pageable) {
+        Page<House> houses = houseService.findAllByAddress(address,pageable);
+        List<House> leasingHouse = new ArrayList<>();
+        for (House house:houses) {
+            if (house.getStatus()==true) {
+                leasingHouse.add(house);
+            }
+        }
+            ModelAndView modelAndView = new ModelAndView("house/rooms-list");
+        modelAndView.addObject("houses", leasingHouse);
+        return modelAndView;
+    }
     public ModelAndView doUpload(MultipartFile avartaImage, MultipartFile[] files, House house) {
 
         //Thu muc goc de save fileupload tren server

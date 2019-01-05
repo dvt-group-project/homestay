@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 public class HouseServiceImpl implements HouseService {
@@ -36,5 +37,15 @@ public class HouseServiceImpl implements HouseService {
     @Override
     public Iterable<House> findAll() {
         return houseRepository.findAll();
+    }
+
+    @Override
+    public Page<House> findAllByAddress(String address, Pageable pageable) {
+        return houseRepository.findAllByAddress(address,pageable);
+    }
+
+    @Override
+    public Iterable<String> findDistinctByAddress() {
+        return houseRepository.findDistinctByAddress();
     }
 }
