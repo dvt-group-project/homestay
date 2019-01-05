@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -84,6 +85,17 @@ public class House {
         return statusIsLeasing;
     }
 
+    public boolean checkDate(Date checkInDate, Date checkOutDate) {
+        boolean checkDate = false;
+        Iterator iterator = reservations.iterator();
+        while (iterator.hasNext()) {
+            Reservation reservation = (Reservation) iterator.next();
+            if (reservation.getCheckInDate() == checkInDate & reservation.getCheckOutDate() == checkOutDate) {
+                checkDate = true;
+            }
+        }
+        return checkDate;
+    }
     @OneToMany(targetEntity = Reservation.class, mappedBy = "house")
     private Collection<Reservation> reservations;
 

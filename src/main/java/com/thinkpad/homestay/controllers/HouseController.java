@@ -24,6 +24,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Date;
 
@@ -71,8 +73,7 @@ public class HouseController {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
             userName = ((UserDetails) principal).getUsername();
-        }
-        else {
+        } else {
             userName = principal.toString();
         }
         return userName;
@@ -130,18 +131,107 @@ public class HouseController {
     }
 
     @GetMapping("/search")
-    public ModelAndView search(@RequestParam("address") String address,@PageableDefault(3) Pageable pageable) {
-        Page<House> houses = houseService.findAllByAddress(address,pageable);
+    public ModelAndView search(@RequestParam("address") String address, @RequestParam("check-in-date") String checkInDate, @RequestParam("check-out-date") String checkOutDate, @RequestParam("price") Integer price,@RequestParam("numberOfRoom") Integer numberOfRoom, @PageableDefault(3) Pageable pageable) {
+        Page<House> houses = houseService.findAllByAddress(address, pageable);
         List<House> leasingHouse = new ArrayList<>();
-        for (House house:houses) {
-            if (house.getStatus()==true) {
+        for (House house : houses) {
+            if (house.getStatus() == true) {
                 leasingHouse.add(house);
             }
         }
-            ModelAndView modelAndView = new ModelAndView("house/rooms-list");
+        if (checkInDate != "" & checkOutDate != "") {
+            Date startDate = null;
+            Date endDate = null;
+            try {
+                startDate = new SimpleDateFormat("yyyy/MM/dd").parse(checkInDate);
+                endDate = new SimpleDateFormat("yyyy/MM/dd").parse(checkOutDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            for (House house : leasingHouse) {
+                if (house.checkDate(startDate, endDate) == false) {
+                    leasingHouse.remove(house);
+                }
+            }
+        }
+        if (price != null) {
+            for (House house : houses) {
+                switch (price) {
+                    case 1:
+                        if (house.getPricePerNight() > 1000000) {
+                            leasingHouse.remove(house);
+                        }
+                        break;
+                    case 2:
+                        if (house.getPricePerNight() < 1000000 & house.getPricePerNight() > 2000000) {
+                            leasingHouse.remove(house);
+                        }
+                        break;
+                    case 3:
+                        if (house.getPricePerNight() < 2000000 & house.getPricePerNight() > 3000000) {
+                            leasingHouse.remove(house);
+                        }
+                        break;
+                    case 4:
+                        if (house.getPricePerNight() < 3000000 & house.getPricePerNight() > 4000000) {
+                            leasingHouse.remove(house);
+                        }
+                        break;
+                    case 5:
+                        if (house.getPricePerNight() < 4000000 & house.getPricePerNight() > 5000000) {
+                            leasingHouse.remove(house);
+                        }
+                        break;
+                    case 6:
+                        if (house.getPricePerNight() < 5000000) {
+                            leasingHouse.remove(house);
+                        }
+                        break;
+                }
+            }
+        }
+//        if (numberOfRoom != null) {
+//            for (House house : houses) {
+//                switch (numberOfRoom) {
+//                    case 1:
+//                        if (house.getPricePerNight() > 1000000) {
+//                            leasingHouse.remove(house);
+//                        }
+//                        break;
+//                    case 2:
+//                        if (house.getPricePerNight() < 1000000 & house.getPricePerNight() > 2000000) {
+//                            leasingHouse.remove(house);
+//                        }
+//                        break;
+//                    case 3:
+//                        if (house.getPricePerNight() < 2000000 & house.getPricePerNight() > 3000000) {
+//                            leasingHouse.remove(house);
+//                        }
+//                        break;
+//                    case 4:
+//                        if (house.getPricePerNight() < 3000000 & house.getPricePerNight() > 4000000) {
+//                            leasingHouse.remove(house);
+//                        }
+//                        break;
+//                    case 5:
+//                        if (house.getPricePerNight() < 4000000 & house.getPricePerNight() > 5000000) {
+//                            leasingHouse.remove(house);
+//                        }
+//                        break;
+//                    case 6:
+//                        if (house.getPricePerNight() < 5000000) {
+//                            leasingHouse.remove(house);
+//                        }
+//                        break;
+//                }
+//            }
+//        }
+
+        ModelAndView modelAndView = new ModelAndView("house/rooms-list");
         modelAndView.addObject("houses", leasingHouse);
         return modelAndView;
     }
+
     public ModelAndView doUpload(MultipartFile avartaImage, MultipartFile[] files, House house) {
 
         //Thu muc goc de save fileupload tren server
