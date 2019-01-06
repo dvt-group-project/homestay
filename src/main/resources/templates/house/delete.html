@@ -30,7 +30,7 @@
                 <th:block th:if="${message}">
                     <h3 th:text="${message}"></h3>
                 </th:block>
-                <form method="post" th:action="@{/delete-house}" th:object="${house}">
+                <form method="post" th:action="@{/delete-house}" th:object="${house}" >
                     <input type="hidden" th:field="*{id}">
                     <div class="form-row">
                         <div class="name">Name</div>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn--radius-2 btn--blue-2" type="submit">Delete</button>
+                        <button class="btn btn--radius-2 btn--blue-2" type="submit" onclick="return confirm('delete now?')">Delete</button>
                     </div>
                 </form>
 
