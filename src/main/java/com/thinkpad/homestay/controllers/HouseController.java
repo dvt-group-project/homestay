@@ -4,6 +4,7 @@ import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.thinkpad.homestay.models.House;
 import com.thinkpad.homestay.models.ImageHouse;
 import com.thinkpad.homestay.models.Reservation;
+import com.thinkpad.homestay.models.User;
 import com.thinkpad.homestay.services.HouseService;
 import com.thinkpad.homestay.services.ImageHouseService;
 import com.thinkpad.homestay.services.UserService;
@@ -40,6 +41,13 @@ public class HouseController {
     @ModelAttribute("houses")
     public Iterable<House> houses() {
         return houseService.findAll();
+    }
+
+    @GetMapping("/post")
+    public ModelAndView posts(@PageableDefault(5) Pageable pageable) {
+        User user = userService.findByName(getUserName());
+        Page<House> posts = houseService.findAllByUser(pageable, user);
+        return new ModelAndView("post/list", "posts", posts);
     }
 
     @GetMapping("/detail-house/{id}")

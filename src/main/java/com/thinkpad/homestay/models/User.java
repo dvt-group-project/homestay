@@ -20,6 +20,17 @@ public class User {
     @OneToMany
     private Collection<Reservation> reservations;
 
+    @OneToMany
+    private Collection<House> houses;
+
+    public Collection<House> getHouses() {
+        return houses;
+    }
+
+    public void setHouses(Collection<House> houses) {
+        this.houses = houses;
+    }
+
     public Collection<Reservation> getReservations() {
         return reservations;
     }
