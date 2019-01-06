@@ -88,6 +88,7 @@
                         <h3 th:text="${message}"></h3>
                     </th:block>
                     <form method="post" th:action="@{/create-house}" th:object="${house}" enctype="multipart/form-data">
+                        <input type="hidden" name="user" th:value="${userId}">
                         <div class="form-row">
                             <div class="name">Name</div>
                             <div class="value">
