@@ -1,6 +1,7 @@
 package com.thinkpad.homestay.services.impl;
 
 import com.thinkpad.homestay.models.House;
+import com.thinkpad.homestay.models.User;
 import com.thinkpad.homestay.repository.HouseRepository;
 import com.thinkpad.homestay.services.HouseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,10 @@ public class HouseServiceImpl implements HouseService {
     @Override
     public Iterable<String> findDistinctByAddress() {
         return houseRepository.findDistinctByAddress();
+    }
+
+    @Override
+    public Page<House> findAllByUser(Pageable pageable, User user) {
+        return houseRepository.findAllByUser(pageable, user);
     }
 }

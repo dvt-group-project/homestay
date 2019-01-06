@@ -1,6 +1,7 @@
 package com.thinkpad.homestay.models;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 
 @Entity
@@ -15,6 +16,28 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "user_role_id")
     public UserRole userRole;
+
+    @OneToMany
+    private Collection<Reservation> reservations;
+
+    @OneToMany
+    private Collection<House> houses;
+
+    public Collection<House> getHouses() {
+        return houses;
+    }
+
+    public void setHouses(Collection<House> houses) {
+        this.houses = houses;
+    }
+
+    public Collection<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(Collection<Reservation> reservations) {
+        this.reservations = reservations;
+    }
 
     public User() {
     }
