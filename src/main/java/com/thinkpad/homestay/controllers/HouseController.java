@@ -1,6 +1,5 @@
 package com.thinkpad.homestay.controllers;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.thinkpad.homestay.models.House;
 import com.thinkpad.homestay.models.ImageHouse;
 import com.thinkpad.homestay.models.Reservation;
@@ -25,6 +24,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -44,6 +44,11 @@ public class HouseController {
     public Iterable<House> houses() {
         return houseService.findAll();
     }
+//
+//    @ModelAttribute("user")
+//    public User user() {
+//        return userService.findByName(getUserName());
+//    }
 
     @GetMapping("/post")
     public ModelAndView posts(@PageableDefault(5) Pageable pageable) {
@@ -95,12 +100,15 @@ public class HouseController {
 
     @GetMapping("/create-house")
     public ModelAndView showCreateHouseForm() {
-        return new ModelAndView("house/create", "house", new House());
+        User user = userService.findByName(getUserName());
+        Integer userId = user.getId();
+        ModelAndView modelAndView = new ModelAndView("house/create", "house", new House());
+        modelAndView.addObject("userId", userId);
+        return modelAndView;
     }
 
     @PostMapping("/create-house")
     public ModelAndView createHouse(@Validated @ModelAttribute("house") House house, @RequestParam("file-image") MultipartFile avartaImage, @RequestParam("file-images") MultipartFile[] files, BindingResult bindingResult) {
-
         if (bindingResult.hasErrors()) {
             return new ModelAndView("house/create");
         } else {
