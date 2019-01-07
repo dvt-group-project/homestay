@@ -9,6 +9,7 @@ import com.thinkpad.homestay.services.ImageHouseService;
 import com.thinkpad.homestay.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -147,7 +148,7 @@ public class HouseController {
     }
 
     @GetMapping("/search")
-    public ModelAndView search(@RequestParam("address") String address,@PageableDefault(3) Pageable pageable) {
+    public ModelAndView search(@RequestParam("address") String address,@PageableDefault(2) Pageable pageable) {
         Page<House> houses = houseService.findAllByAddress(address,pageable);
         List<House> leasingHouse = new ArrayList<>();
         for (House house:houses) {
@@ -155,8 +156,9 @@ public class HouseController {
                 leasingHouse.add(house);
             }
         }
+        Page<House> houses1 = new PageImpl<>(leasingHouse, pageable, leasingHouse.size());
             ModelAndView modelAndView = new ModelAndView("house/list");
-        modelAndView.addObject("houses", leasingHouse);
+        modelAndView.addObject("houses", houses1);
         return modelAndView;
     }
     public ModelAndView doUpload(MultipartFile avartaImage, MultipartFile[] files, House house) {
