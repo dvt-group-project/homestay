@@ -147,7 +147,8 @@ public class HouseController {
     }
 
     @GetMapping("/search")
-    public ModelAndView search(@RequestParam("address") String address, @RequestParam("check-in-date") String checkInDate, @RequestParam("check-out-date") String checkOutDate, @RequestParam("price") Integer price,@RequestParam("numberOfRoom") Integer numberOfRoom, @PageableDefault(3) Pageable pageable) {
+    public ModelAndView search(@RequestParam("address") String address, @RequestParam("check-in-date") String checkInDate, @RequestParam("check-out-date") String checkOutDate,
+                               @RequestParam(name = "price", required = false) Integer price,@RequestParam(name = "numberOfRoom", required = false) Integer numberOfRoom, @PageableDefault(3) Pageable pageable) {
         Page<House> houses = houseService.findAllByAddress(address, pageable);
         List<House> leasingHouse = new ArrayList<>();
         for (House house : houses) {
@@ -179,22 +180,22 @@ public class HouseController {
                         }
                         break;
                     case 2:
-                        if (house.getPricePerNight() < 1000000 & house.getPricePerNight() > 2000000) {
+                        if (house.getPricePerNight() < 1000000 || house.getPricePerNight() > 2000000) {
                             leasingHouse.remove(house);
                         }
                         break;
                     case 3:
-                        if (house.getPricePerNight() < 2000000 & house.getPricePerNight() > 3000000) {
+                        if (house.getPricePerNight() < 2000000 || house.getPricePerNight() > 3000000) {
                             leasingHouse.remove(house);
                         }
                         break;
                     case 4:
-                        if (house.getPricePerNight() < 3000000 & house.getPricePerNight() > 4000000) {
+                        if (house.getPricePerNight() < 3000000 || house.getPricePerNight() > 4000000) {
                             leasingHouse.remove(house);
                         }
                         break;
                     case 5:
-                        if (house.getPricePerNight() < 4000000 & house.getPricePerNight() > 5000000) {
+                        if (house.getPricePerNight() < 4000000 ||house.getPricePerNight() > 5000000) {
                             leasingHouse.remove(house);
                         }
                         break;
@@ -243,7 +244,7 @@ public class HouseController {
 //            }
 //        }
 
-        ModelAndView modelAndView = new ModelAndView("house/rooms-list");
+        ModelAndView modelAndView = new ModelAndView("house/list");
         modelAndView.addObject("houses", leasingHouse);
         return modelAndView;
     }
