@@ -679,12 +679,11 @@
                      tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/underline.png" alt="underline"
                      class="img-responsive"/>
             </div>
-            <div class="row featured" th:each="house : ${houses}">
-
-                <div class="col-sm-4 col-xs-12">
+            <div class="row featured" >
+                <div th:each="house : ${houses}" class="col-sm-4 col-xs-12" >
                     <figure class="ed-room ed-room-highlight featured-room">
                         <a href="#slider-container1" class="popup-modal">
-                            <img th:src="@{/resources/__${house.getUrl()}__ }"
+                            <img th:src="@{/resources/__${house.getUrl()}__}"
                                  tppabs="http://demo.themefisher.com/iamabdus/eden/images/home/sample-rm3.jpg"
                                  alt="Image" class="img-responsive">
                             <div class="corner-ribbon"><span>50% OFF</span></div>
@@ -712,7 +711,7 @@
                 </div>
 
                 <!-- POPUP -->
-                <div id="slider-container1" class="white-popup-block mfp-hide room-fullwidth">
+                <div id="slider-container1" class="white-popup-block mfp-hide room-fullwidth" th:each="house : ${houses}">
 
                     <div class="popup-img">
                         <img th:src="@{/resources/images/popup-img1.jpg}"
@@ -778,7 +777,7 @@
                     <p><a class="popup-modal-dismiss" href="#">
                         <span class="icomoon-cancel3"></span>
                     </a></p>
-
+                </div>
                 </div>
 
                 <!--<div class="col-sm-4 col-xs-12">-->
@@ -974,13 +973,10 @@
                             <!--</div>-->
                         <!--</div>-->
                     <!--</div>-->
-
+	        </div>
                     <p><a class="popup-modal-dismiss" href="#">
                         <span class="icomoon-cancel3"></span>
                     </a></p>
-
-                </div>
-
             </div>
         </div>
     </section>

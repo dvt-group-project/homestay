@@ -283,10 +283,10 @@
 			</div>
 
 			<!-- PAGINATION -->
-			<nav class="pagination-nav">
+			<nav class="pagination-nav" >
 				<ul class="pagination">
 					<li>
-						<a href="#" aria-label="Previous">
+						<a href="#" aria-label="Previous" th:if="${houses != null}" th:href="@{/houses(page=${houses.number - 1})}">
 							<span aria-hidden="true">Previous</span>
 						</a>
 					</li>
@@ -295,7 +295,7 @@
 					<li><a href="#">.....</a></li>
 					<li><a href="#">9</a></li>
 					<li>
-						<a href="#" aria-label="Next">
+						<a href="#" aria-label="Next"  th:if="${houses != null}" th:href="@{/houses(page=${houses.number + 1})}">
 							<span aria-hidden="true">Next</span>
 						</a>
 					</li>
