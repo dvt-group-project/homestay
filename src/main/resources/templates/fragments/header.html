@@ -88,8 +88,9 @@
 				<li class="dropdown" th:if="${#request.userPrincipal} == null">
 					<a th:href="@{/login}" class="dropdown-toggle" data-toggle="modal" data-target=".mode" role="button" aria-haspopup="true" aria-expanded="false">
 						<span class="glyphicon glyphicon-user"></span>
-						Login<span class="caret"></span></a>
+						User<span class="caret"></span></a>
 					<ul class="dropdown-menu">
+						<li><a th:href="@{/login}">Login</a></li>
 						<li><a href="#">Forgot password</a></li>
 						<li><a th:href="@{/registration}">Registration</a></li>
 						<li role="separator" class="divider"></li>
