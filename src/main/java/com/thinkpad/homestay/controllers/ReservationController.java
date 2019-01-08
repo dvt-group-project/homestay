@@ -31,6 +31,7 @@ public class ReservationController {
 
     @PostMapping("/booknow")
     public ModelAndView bookAHomestay(@ModelAttribute("reservation") Reservation reservation) {
+        reservation.setStatus("leasing");
         reservationService.save(reservation);
         ModelAndView modelAndView = new ModelAndView("redirect:/houses", "reservation", reservation);
         return modelAndView;
