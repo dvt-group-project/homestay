@@ -7,6 +7,7 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
@@ -99,14 +100,19 @@ public class House {
         return statusIsLeasing;
     }
 
-    public boolean checkDate(Date checkInDate, Date checkOutDate) {
+    public boolean checkDate(String checkInDate, String checkOutDate) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
         boolean checkDate = false;
         Iterator iterator = reservations.iterator();
         while (iterator.hasNext()) {
             Reservation reservation = (Reservation) iterator.next();
-            if (reservation.getCheckInDate() == checkInDate & reservation.getCheckOutDate() == checkOutDate) {
+            String sDate = simpleDateFormat.format(reservation.getCheckInDate());
+            String eDate = simpleDateFormat.format(reservation.getCheckOutDate());
+
+            if (sDate.compareTo(checkInDate)==0 & eDate.compareTo(checkOutDate)==0) {
                 checkDate = true;
             }
+            break;
         }
         return checkDate;
     }
