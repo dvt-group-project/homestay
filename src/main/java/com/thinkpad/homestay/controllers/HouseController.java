@@ -9,6 +9,7 @@ import com.thinkpad.homestay.services.ImageHouseService;
 import com.thinkpad.homestay.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,13 +21,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.security.Principal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Date;
 
@@ -93,9 +92,13 @@ public class HouseController {
     }
 
     @GetMapping("/houses")
-    public ModelAndView listHouse(@PageableDefault(5) Pageable pageable) {
+    public ModelAndView listHouse(@PageableDefault(1) Pageable pageable, HttpServletRequest request) {
         Page<House> houses = houseService.findAll(pageable);
-        return new ModelAndView("house/list", "houses", houses);
+        String url = String.valueOf(request.getRequestURI() + "?");
+        ModelAndView modelAndView = new ModelAndView("house/list");
+        modelAndView.addObject("url", url);
+        modelAndView.addObject("houses", houses);
+        return modelAndView;
     }
 
     @GetMapping("/create-house")
@@ -147,27 +150,18 @@ public class HouseController {
     }
 
     @GetMapping("/search")
-    public ModelAndView search(@RequestParam("address") String address, @RequestParam("check-in-date") String checkInDate, @RequestParam("check-out-date") String checkOutDate,
-                               @RequestParam(name = "price", required = false) Integer price,@RequestParam(name = "numberOfRoom", required = false) Integer numberOfRoom, @PageableDefault(3) Pageable pageable) {
+    public ModelAndView search(HttpServletRequest request, @RequestParam("address") String address, @RequestParam("check-in-date") String checkInDate, @RequestParam("check-out-date") String checkOutDate,
+                               @RequestParam(name = "price", required = false) Integer price, @RequestParam(name = "numberOfRoom", required = false) Integer numberOfRoom, @PageableDefault(1) Pageable pageable) {
         Page<House> houses = houseService.findAllByAddress(address, pageable);
-        List<House> leasingHouse = new ArrayList<>();
         for (House house : houses) {
-            if (house.getStatus() == true) {
-                leasingHouse.add(house);
+            if (house.getStatus() != true) {
+                houses.iterator().remove();
             }
         }
         if (checkInDate != "" & checkOutDate != "") {
-            Date startDate = null;
-            Date endDate = null;
-            try {
-                startDate = new SimpleDateFormat("yyyy/MM/dd").parse(checkInDate);
-                endDate = new SimpleDateFormat("yyyy/MM/dd").parse(checkOutDate);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            for (House house : leasingHouse) {
-                if (house.checkDate(startDate, endDate) == false) {
-                    leasingHouse.remove(house);
+            for (House house : houses) {
+                if (house.checkDate(checkInDate, checkOutDate) == false) {
+                    houses.iterator().remove();
                 }
             }
         }
@@ -176,32 +170,32 @@ public class HouseController {
                 switch (price) {
                     case 1:
                         if (house.getPricePerNight() > 1000000) {
-                            leasingHouse.remove(house);
+                            houses.iterator().remove();
                         }
                         break;
                     case 2:
                         if (house.getPricePerNight() < 1000000 || house.getPricePerNight() > 2000000) {
-                            leasingHouse.remove(house);
+                            houses.iterator().remove();
                         }
                         break;
                     case 3:
                         if (house.getPricePerNight() < 2000000 || house.getPricePerNight() > 3000000) {
-                            leasingHouse.remove(house);
+                            houses.iterator().remove();
                         }
                         break;
                     case 4:
                         if (house.getPricePerNight() < 3000000 || house.getPricePerNight() > 4000000) {
-                            leasingHouse.remove(house);
+                            houses.iterator().remove();
                         }
                         break;
                     case 5:
-                        if (house.getPricePerNight() < 4000000 ||house.getPricePerNight() > 5000000) {
-                            leasingHouse.remove(house);
+                        if (house.getPricePerNight() < 4000000 || house.getPricePerNight() > 5000000) {
+                            houses.iterator().remove();
                         }
                         break;
                     case 6:
                         if (house.getPricePerNight() < 5000000) {
-                            leasingHouse.remove(house);
+                            houses.iterator().remove();
                         }
                         break;
                 }
@@ -245,7 +239,10 @@ public class HouseController {
 //        }
 
         ModelAndView modelAndView = new ModelAndView("house/list");
-        modelAndView.addObject("houses", leasingHouse);
+        modelAndView.addObject("houses", houses);
+        String url = request.getRequestURI() + "?" + request.getQueryString() + "&";
+        String[] arr = url.split("page=");
+        modelAndView.addObject("url", arr[0]);
         return modelAndView;
     }
 
@@ -275,7 +272,7 @@ public class HouseController {
     }
 
     private void uploadAvartaImage(MultipartFile file, House house) {
-        File uploadRootDir = new File("/home/long/uploads");
+        File uploadRootDir = new File("/home/dat/uploads");
 
         //Tao thu muc goc neu no khong ton tai
         if (!uploadRootDir.exists()) {
@@ -308,7 +305,7 @@ public class HouseController {
     }
 
     private void uploadDetailImages(MultipartFile[] files, House house) {
-        File uploadRootDir = new File("/home/long/uploads");
+        File uploadRootDir = new File("/home/dat/uploads");
 
         //Tao thu muc goc neu no khong ton tai
         if (!uploadRootDir.exists()) {
